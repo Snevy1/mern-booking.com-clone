@@ -2,6 +2,7 @@
   "name": "e2e-tests",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {},
   "keywords": [],
   "author": "",
@@ -9,6 +10,7 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.48.0",
-    "@types/node": "^22.7.5"
+    "@types/node": "^22.19.3",
+    "typescript": "^5.9.3"
   }
 }
