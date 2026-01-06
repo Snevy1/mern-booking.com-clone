@@ -73,7 +73,7 @@ router.get("/search", async(req:Request, res:Response)=>{
 
 const constructSearchQuery = (queryParams: any)=>{
     let constructedQuery: any = {};
-
+    
     if(queryParams.destination){
         constructedQuery.$or = [
             {
@@ -119,7 +119,7 @@ if(queryParams.stars){
 }
 
 if(queryParams.maxPrice){
-    constructedQuery.maxPrice = {
+    constructedQuery.pricePerNight = {
         $lte: parseInt(queryParams.maxPrice).toString()
     }
 }
