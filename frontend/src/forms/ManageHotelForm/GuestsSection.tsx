@@ -21,14 +21,14 @@ const GuestsSection = ()=>{
 
                 <label>
                     Children
-                    <input type="number" min={0} {...register("childCount", {
+                    <input type="number" min={0} {...register("childrenCount", {
                         required: true,
 
                     })} className="border rounded w-full py-1 px-3 font-normal"/>
 
 
-                    {errors.childCount && (
-                <span className="text-red-500 text-sm font-bold ">{errors.childCount?.message}</span>
+                    {errors.childrenCount && (
+                <span className="text-red-500 text-sm font-bold ">{errors.childrenCount?.message}</span>
             )}
                 </label>
                             
