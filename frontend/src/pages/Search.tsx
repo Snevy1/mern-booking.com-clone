@@ -86,22 +86,53 @@ const Search = () => {
   }  
 
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-5 '>
+    <div className='grid grid-cols-[150px_1fr] lg:grid-cols-[250px_1fr] gap-5'>
       <div className='rounded-lg border border-slate-300 p-5 h-fit sticky top-10 '>
-        <div className='space-y-5'>
-          <h3 className='text-lg font-semibold border-b border-slate-300 pb-5 '>
+        <div className='space-y-6 p-6 bg-white rounded-xl shadow-sm border border-slate-100'>
+  <div className='pb-4 border-b border-slate-200'>
+    <h3 className='text-xl font-bold text-slate-800 tracking-tight'>
+      Filter Results
+    </h3>
+    <p className='text-sm text-slate-500 mt-1'>
+      Refine your search using the filters below
+    </p>
+  </div>
 
-            Filter by:
-          </h3>
+  <div className='space-y-7'>
+    {/* FILTERS */}
+    <div className='space-y-3'>
+      <h4 className='text-base font-semibold text-slate-700 mb-2'>Star Rating</h4>
+      <StarRatingFilter 
+        selectedStars={selectedStars}  
+        onChange={handleStarsChange} 
+      />
+    </div>
 
-          {/*  FILTERS */}
+    <div className='space-y-3'>
+      <h4 className='text-base font-semibold text-slate-700 mb-2'>Hotel Type</h4>
+      <HotelTypesFilter 
+        selectedHotelTypes={selectedHotelTypes} 
+        onChange={handleHotelTypeChange} 
+      />
+    </div>
 
-          <StarRatingFilter selectedStars={selectedStars}  onChange={handleStarsChange} />
+    <div className='space-y-3'>
+      <h4 className='text-base font-semibold text-slate-700 mb-2'>Facilities</h4>
+      <FacilitiesFilter 
+        selectedFacilities={selectedFacilities} 
+        onChange={handleFacilitiesChange} 
+      />
+    </div>
 
-          <HotelTypesFilter selectedHotelTypes={selectedHotelTypes} onChange={handleHotelTypeChange} />
-          <FacilitiesFilter selectedFacilities={selectedFacilities} onChange={handleFacilitiesChange} />
-          <PriceFilter selectedPrice={selectedPrice}  onChange={(value?:number)=>setSelectedPrice(value)}/>
-        </div>
+    <div className='space-y-3'>
+      <h4 className='text-base font-semibold text-slate-700 mb-2'>Price Range</h4>
+      <PriceFilter 
+        selectedPrice={selectedPrice}  
+        onChange={(value?: number) => setSelectedPrice(value)}
+      />
+    </div>
+  </div>
+</div>
 
         
 

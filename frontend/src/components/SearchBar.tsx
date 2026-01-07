@@ -57,7 +57,7 @@ const SearchBar = () => {
         </label>
         <div className="border-l border-slate-200 mx-2"></div>
         <label className="items-center flex text-xs font-bold text-slate-500 uppercase tracking-wider">
-          Kids
+          Children
           <input
             className="w-full p-1 focus:outline-none font-bold text-lg text-slate-800"
             type="number"
@@ -78,6 +78,7 @@ const SearchBar = () => {
           startDate={checkIn}
           endDate={checkOut}
           minDate={minDate}
+           maxDate={maxDate}
           placeholderText="Check-in"
           className="w-full bg-transparent p-3 focus:outline-none font-medium text-slate-700 cursor-pointer"
           wrapperClassName="w-full"
@@ -93,6 +94,7 @@ const SearchBar = () => {
           startDate={checkIn}
           endDate={checkOut}
           minDate={checkIn || minDate}
+           maxDate={maxDate}
           placeholderText="Check-out"
           className="w-full bg-transparent p-3 focus:outline-none font-medium text-slate-700 cursor-pointer"
           wrapperClassName="w-full"
