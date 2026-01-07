@@ -4,7 +4,6 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import * as apiClient from "../api-client";
 import { AiFillStar } from "react-icons/ai";
-import { HotelType } from "../../../backend/src/shared/types";
 import GuestInfoForm from "../components/forms/GuestInfoForm/GuestInfoForm";
 
 const Detail = () => {
