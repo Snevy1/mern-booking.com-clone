@@ -63,7 +63,7 @@ export type BookingType = {
     checkIn: Date;
     checkOut: Date;
     totalCost: number;
-    hotelId: string | mongoose.Types.ObjectId;
+    hotelId: any;
 
 }
 
