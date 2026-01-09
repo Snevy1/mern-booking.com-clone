@@ -1,6 +1,6 @@
 // Users
 
-import mongoose from "mongoose";
+
 
 export type UserType = {
     _id: string,
