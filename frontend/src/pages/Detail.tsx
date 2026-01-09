@@ -121,7 +121,7 @@ const Detail = () => {
         </div>
 
         {/* Booking Form */}
-        <div className="lg:sticky lg:top-6 self-start">
+        <div className=" lg:top-6 self-start">
           <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6 space-y-6">
             <div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">Book Your Stay</h3>

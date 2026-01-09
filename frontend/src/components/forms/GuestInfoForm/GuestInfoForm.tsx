@@ -17,7 +17,7 @@ type GuestInfoFormData = {
     checkIn: Date;
     checkOut:Date;
     adultCount: number;
-    childCount:number;
+    childrenCount:number;
 }
 
 
@@ -36,7 +36,7 @@ const GuestInfoForm = ({hotelId, pricePerNight}:Props) => {
             checkIn: search.checkIn,
             checkOut: search.checkOut,
             adultCount: search.adultCount,
-            childCount: search.childrenCount
+            childrenCount: search.childrenCount
 
         }
     });
@@ -51,14 +51,14 @@ maxDate.setFullYear(maxDate.getFullYear() + 1);
 
 
 const onSignInClick = (data:GuestInfoFormData)=> {
-    search.saveSearchValues("", data.checkIn, data.checkOut, data.adultCount, data.childCount )
+    search.saveSearchValues("", data.checkIn, data.checkOut, data.adultCount, data.childrenCount )
 
     navigate("/sign-in",{state:{from: location}} )
 };
 
 
 const onSubmit = (data:GuestInfoFormData)=> {
-    search.saveSearchValues("", data.checkIn, data.checkOut, data.adultCount, data.childCount )
+    search.saveSearchValues("", data.checkIn, data.checkOut, data.adultCount, data.childrenCount )
     navigate(`/hotel/${hotelId}/booking` )
 };
 
@@ -140,7 +140,7 @@ const onSubmit = (data:GuestInfoFormData)=> {
             type="number"
             min={0}
             max={20}
-            {...register("childCount", {
+            {...register("childrenCount", {
                 valueAsNumber: true
             })}
           />

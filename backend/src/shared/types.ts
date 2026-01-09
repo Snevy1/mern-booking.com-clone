@@ -1,3 +1,20 @@
+// Users
+
+import mongoose from "mongoose";
+
+export type UserType = {
+    _id: string,
+    email: string,
+    password: string,
+    firstName: string,
+    lastName: string
+}
+
+
+
+
+
+
 export type HotelType= {
     _id: string,
     userId: string,
@@ -14,7 +31,9 @@ export type HotelType= {
     starRating: number,
     imageUrls: string[],
     lastUpdated: Date,
-}
+    bookings: BookingType[];
+};
+
 
 
 export type HotelSearchResponse = {
@@ -26,3 +45,31 @@ export type HotelSearchResponse = {
     }
 
 }
+
+
+export type PaymentIntentResponse = {
+    paymentIntentId: string;
+    clientSecret: string;
+    totalCost: number;
+    paymentMethod: 'stripe' | 'mpesa';
+    phoneNumber?: string
+    merchantRequestID?: string;
+};
+
+
+export type BookingType = {
+    id:string;
+    userId: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    adultCount:number;
+    childrenCount: number;
+    checkIn: Date;
+    checkOut: Date;
+    totalCost: number;
+    hotelId: string | mongoose.Types.ObjectId;
+
+}
+
+ 
