@@ -46,7 +46,7 @@ const BookingForm = ({ currentUser, paymentIntent, paymentMethod }: Props) => {
         onError: () => showToast({ message: "Error saving booking", type: "ERROR" }),
     });
 
-    const { handleSubmit, register } = useForm<BookingFormData>({
+    const { handleSubmit } = useForm<BookingFormData>({
         defaultValues:{
             firstName: currentUser.firstName,
             lastName: currentUser.lastName,
