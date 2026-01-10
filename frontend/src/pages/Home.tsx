@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import * as apiClient from "../api-client";
 import LatestDestinationCard from "../components/LatestDestinationCard";
 import { motion } from "framer-motion";
-import { Search, Sparkles, Shield, Star, ChevronRight } from "lucide-react";
+import { Search, Sparkles, Shield, Star } from "lucide-react";
 import { useState } from "react";
 
 const Home = () => {

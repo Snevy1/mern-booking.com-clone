@@ -1,7 +1,7 @@
 
 import { useQuery } from "react-query";
 import * as apiClient from "../api-client";
-import { Loader2, Calendar, Users, MapPin, Star, ChevronRight } from "lucide-react";
+import {  Calendar, Users, MapPin, Star, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MyBookings = () => {
