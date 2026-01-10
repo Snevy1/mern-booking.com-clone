@@ -67,4 +67,8 @@ export type BookingType = {
 
 }
 
+ export type PopulatedBookingType = Omit<BookingType, 'hotelId'> & {
+    hotelId: HotelType;  // The full hotel object
+}
+
  

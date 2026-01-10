@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const UI_URL = "http://localhost:5173/"
 
+
 test.beforeEach(async({page})=>{
       await page.goto(UI_URL);
       await page.getByRole('link', {name: "Sign In"}).click();
@@ -90,8 +91,15 @@ test("should book hotel", async({page})=>{
 
    await page.getByRole("button", {name: "Complete Booking"}).click();
 
-   await expect(page.getByText("Booking successful!")).toBeVisible()
-})
+   await expect(page.getByText("Booking successful!")).toBeVisible();
+
+   await page.getByRole("link", {name: "My Bookings"}).click();
+
+   await expect(page.getByText("Dublin Getaways").nth(0)).toBeVisible();
+   
+});
+
+
 
 
 

@@ -1,6 +1,6 @@
 import { RegisterFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
-import  {HotelSearchResponse, HotelType, PaymentIntentResponse, UserType} from "../../backend/src/shared/types"
+import  {BookingType, HotelSearchResponse, HotelType, PaymentIntentResponse, PopulatedBookingType, UserType} from "../../backend/src/shared/types"
 import { BookingFormData } from "./forms/ManageHotelForm/BookingForm/BookingForm";
 
 
@@ -241,5 +241,18 @@ const response = await fetch(`${API_BASE_URL}/api/hotels/${formData.hotelId}/boo
 if(!response.ok){
     throw new Error("Error booking the room ")
 }
+
+}
+
+export const fetchMyBookings = async(): Promise<PopulatedBookingType[]>=>{
+    const response = await fetch(`${API_BASE_URL}/api/my-bookings`, {
+       credentials: "include",
+    });
+
+  if(!response.ok){
+    throw new Error("Unable to fetch bookings")
+  }
+
+  return response.json();
 
 }
