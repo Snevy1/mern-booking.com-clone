@@ -1,6 +1,6 @@
 import { RegisterFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
-import  {BookingType, HotelSearchResponse, HotelType, PaymentIntentResponse, PopulatedBookingType, UserType} from "../../backend/src/shared/types"
+import  { HotelSearchResponse, HotelType, PaymentIntentResponse, PopulatedBookingType, UserType} from "../../backend/src/shared/types"
 import { BookingFormData } from "./forms/ManageHotelForm/BookingForm/BookingForm";
 
 
