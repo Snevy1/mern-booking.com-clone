@@ -3,9 +3,12 @@ import Toast from "../components/Toast";
 import { useQuery } from "react-query";
 import * as apiClient from "../api-client"
 import { loadStripe, Stripe } from "@stripe/stripe-js";
+import { UserType } from "../../../backend/src/shared/types";
 
 
 const STRIPE_PUB_KEY = import.meta.env.VITE_STRIPE_PUB_KEY || '';
+
+const user = await apiClient.fetchCurrentUser();
 
 
 type ToastMessage ={
@@ -18,6 +21,7 @@ type AppContext ={
  
     showToast:(toastMessage: ToastMessage)=>void;
     isLoggedIn: boolean;
+    user: UserType;
     stripePromise: Promise<Stripe | null >;
 }
 
@@ -39,6 +43,7 @@ export const AppContextProvider = ({children}: {children: React.ReactNode})=>{
                 setToast(toastMessage)
             },
             isLoggedIn: !isError,
+            user,
             stripePromise
         }}>
             {toast && (<Toast message={toast.message} type={toast.type} onClose={()=>setToast(undefined)}/>)}

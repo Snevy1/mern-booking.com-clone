@@ -33,3 +33,51 @@
   background-color: #e2f1f5 !important;
   color: #74B9CB !important;
 }
+
+
+/*  MY bookings page */
+/* Add to your global CSS file (e.g., index.css or App.css) */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for booking cards */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 3px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #d1d5db;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}

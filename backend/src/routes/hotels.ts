@@ -91,6 +91,24 @@ router.get("/search", async(req:Request, res:Response)=>{
 
 });
 
+router.get("/", async(req:Request, response: Response)=>{
+
+try {
+    const hotels = await Hotel.find().sort("_lastUpdated");
+
+    response.json(hotels)
+    
+} catch (error) {
+
+    console.log("error", error)
+
+    response.status(500).json({message: "Error fetching hotels"});
+
+    
+}
+
+})
+
 
 // api/hotels/8976543490
 router.get("/:id",[
